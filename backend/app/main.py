@@ -26,13 +26,13 @@ app.add_middleware(
 print("🔄 Loading models...")
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODELS_PATH = os.path.join(BASE_DIR, "models")
-DATA_PATH = os.path.join(BASE_DIR, "data")
+# DATA_PATH = os.path.join(BASE_DIR, "data")
 
 rf_model = joblib.load(os.path.join(MODELS_PATH, "rf_model.joblib"))
 xgb_model = joblib.load(os.path.join(MODELS_PATH, "xgb_model.joblib"))
 scaler = joblib.load(os.path.join(MODELS_PATH, "scaler.joblib"))
 # nn_model = load_model(os.path.join(MODELS_PATH, "nn_model.h5"))
-test_data = pd.read_csv(os.path.join(DATA_PATH, "test_predictions_with_ensemble.csv"))
+# test_data = pd.read_csv(os.path.join(DATA_PATH, "test_predictions_with_ensemble.csv"))
 print("✅ All models loaded successfully!")
 
 # Pydantic models for request validation
