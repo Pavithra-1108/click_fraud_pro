@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse
 import joblib
 import pandas as pd
 import numpy as np
-from tensorflow.keras.models import load_model
+# from tensorflow.keras.models import load_model
 import os
 import json
 from typing import List
@@ -31,7 +31,7 @@ DATA_PATH = os.path.join(BASE_DIR, "data")
 rf_model = joblib.load(os.path.join(MODELS_PATH, "rf_model.joblib"))
 xgb_model = joblib.load(os.path.join(MODELS_PATH, "xgb_model.joblib"))
 scaler = joblib.load(os.path.join(MODELS_PATH, "scaler.joblib"))
-nn_model = load_model(os.path.join(MODELS_PATH, "nn_model.h5"))
+# nn_model = load_model(os.path.join(MODELS_PATH, "nn_model.h5"))
 test_data = pd.read_csv(os.path.join(DATA_PATH, "test_predictions_with_ensemble.csv"))
 print("✅ All models loaded successfully!")
 
